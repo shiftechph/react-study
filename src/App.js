@@ -17,7 +17,10 @@ class App extends Component {
         name: "Erwin",
         last: "Jay",
 
-        showReset: false
+        showReset: false,
+
+        // button tick
+        buttonTick: false,
     }
   }
 
@@ -37,6 +40,14 @@ class App extends Component {
 
   goToLogin = () => {
     this.props.history.push('/login-screen');
+  }
+
+  buttonTickAction = () => {
+
+    this.setState({
+      buttonTick: this.state.buttonTick ? false : true
+    });
+
   }
 
   render() {
@@ -82,6 +93,16 @@ class App extends Component {
           onClick={this.goToLogin}
         >
           Go To Login
+        </button>
+
+        <br/> <br/>
+
+        <button
+          type="button"
+          className={`text-white font-bold py-2 px-4 rounded ${this.state.buttonTick ? `bg-green-900` : `bg-gray-500`}`}
+          onClick={this.buttonTickAction}
+        >
+          Tick Button
         </button>
 
       </div>

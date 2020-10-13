@@ -13,7 +13,7 @@ const MainRoute = () => {
   return (
     <Router history={history}>
       <Switch>
-        
+
         <Route path={'/login-screen'} component={ LoginPage } />
 
         <Route path={'/'} component={ App } />
